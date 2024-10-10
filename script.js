@@ -6,8 +6,19 @@ let computerScore = 0;
 // to ma zwracac string xdd
 
 function playerChoice () {
-    let playerPick = +prompt('Pick a thing  1 - Rock , 2 - Paper , 3 - Scissors', 1)
-    return playerPick;
+    let pickNum = +prompt('Pick a thing  1 - Rock , 2 - Paper , 3 - Scissors', 1)
+    if (pickNum === 1 ) {
+        pickNum = 'Rock'
+   } else if (pickNum === 2) {
+       pickNum = 'Paper' 
+   } else if (pickNum === 3){
+        pickNum = 'Scissors'
+   } else {
+    console.log('you picked wrong number so you get a rock')
+    pickNum = 'Rock'
+   }
+
+   return pickNum;
 }
 
 function computerChoice () {
@@ -30,57 +41,57 @@ function computerChoice () {
 
 
 function playRound() {
-    player = playerChoice()
+    player = playerChoice().toLowerCase();
 
-    computer = computerChoice()
-if (player == 1 ) {
+    computer = computerChoice().toLowerCase();
+if (player == 'rock' ) {
     console.log('player picked Rock !')
-    if (player + computer === 2) {
+    if (player  === computer) {
         console.log('computer picked Rock !')
         playerScore += 1
         computerScore += 1
         console.log('it\'s a TIE!')
-    } else if ( player + computer === 3) {
+    } else if ( computer === "paper") {
         console.log('computer picked Paper !')
         computerScore += 1
         console.log('computer Wins !')
-    } else if (player + computer === 4) {
+    } else if (computer === 'scissors') {
         console.log('computer picked Scissors !')
         playerScore += 1
         console.log('Player wins!!')
     } else {
         console.log('Something went wrong sorry :(')
     }
-} else if (player == 2) {
+} else if (player == 'paper') {
         console.log('player picked Paper !')
-        if (player + computer === 4) {
+        if (player === computer) {
             console.log('computer picked Paper !')
             playerScore += 1
             computerScore += 1
             console.log('it\'s a TIE!')
-        } else if ( player + computer === 3) {
+        } else if (computer === 'rock') {
             console.log('computer picked Rock !')
             playerScore += 1
             console.log('Player  Wins !')
-        } else if (player + computer === 5) {
+        } else if (computer === 'scissors') {
             console.log('computer picked Scissors !')
             computerScore += 1
             console.log('Computer wins!!')
         } else {
             console.log('Something went wrong sorry :(')
         }
-} else if (player == 3) {
+} else if (player == 'scissors') {
     console.log('player picked Scissors !')
-        if (player + computer === 6) {
+        if (player === computer) {
             console.log('computer picked Scissors !')
             playerScore += 1
             computerScore += 1
             console.log('it\'s a TIE!')
-        } else if ( player + computer === 5) {
+        } else if (computer === 'paper') {
             console.log('computer picked Paper !')
             playerScore += 1
             console.log('Player  Wins !')
-        } else if (player + computer === 4) {
+        } else if (computer === 'rock') {
             console.log('computer picked Rock !')
             computerScore += 1
             console.log('Computer wins!!')

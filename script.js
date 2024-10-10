@@ -11,7 +11,16 @@ function playerChoice () {
 }
 
 function computerChoice () {
-    return Math.floor(Math.random()*3) + 1;
+    let pickNum = Math.floor(Math.random()*3) + 1;
+    if (pickNum === 1 ) {
+         pickNum = 'Rock'
+    } else if (pickNum === 2) {
+        pickNum = 'Paper' 
+    } else if (pickNum === 3){
+         pickNum = 'Scissors'
+    }
+
+    return pickNum;
 }
 
 // 1 - rock 2 paper 3 scissror

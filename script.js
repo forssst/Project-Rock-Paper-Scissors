@@ -1,4 +1,5 @@
-console.log('siemnako ')
+console.log('Hello!')
+console.log('If you want to play a Rock Paper Scissors game type \'playGame()\'')
 
 let playerScore = 0;
 let computerScore = 0;

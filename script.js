@@ -108,22 +108,40 @@ return console.log(`the score is ${playerScore} - ${computerScore}`)
 
 
 
-const rockBut = document.querySelectorAll("button");
+// const rockBut = document.querySelectorAll("button");
 
-rockBut.forEach(but => but.addEventListener("click",  (e) => {
-    console.log(e)
-    if (e.target.classList == "rockBut") {
-        playRound(1)
-    } else if (e.target.classList == "paperBut") {
-        playRound(2)
-    } else if (e.target.classList == "scissorsBut") {
-        playRound(3)
-    } else {
-        playRound(1)
-    }
+// rockBut.forEach(but => but.addEventListener("click",  (e) => {
+//     console.log(e)
+//     if (e.target.classList == "rockBut") {
+//         playRound(1)
+//     } else if (e.target.classList == "paperBut") {
+//         playRound(2)
+//     } else if (e.target.classList == "scissorsBut") {
+//         playRound(3)
+//     } else {
+//         playRound(1)
+//     }
 
     
-}))
+// }))
+
+
+const choiceButDiv = document.querySelector(".choiceButtons");
+
+console.log(choiceButDiv)
+
+choiceButDiv.addEventListener("click", (e) => {
+    console.log(e.target.textContent)
+    const choiceBut = document.querySelector(`button[data-choice="${e.target.textContent}"]`)
+    console.log(choiceBut)
+    if (e.target.textContent === "Rock") {
+        playRound(1)
+    } else if (e.target.textContent === "Paper") {
+        playRound(2)
+    } else if ( e.target.textContent === "Scissors"){
+        playRound(3)
+    } else {playRound(1)}
+})
 
 
 

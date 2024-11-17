@@ -6,8 +6,8 @@ let computerScore = 0;
 
 // to ma zwracac string xdd
 
-function playerChoice () {
-    let pickNum = +prompt('Pick a thing  1 - Rock , 2 - Paper , 3 - Scissors', 1)
+function playerChoice (pickNum) {
+    pickNum;
     if (pickNum === 1 ) {
         pickNum = 'Rock'
    } else if (pickNum === 2) {
@@ -41,8 +41,8 @@ function computerChoice () {
 // 3 1 3 2 3 3
 
 
-function playRound() {
-    player = playerChoice().toLowerCase();
+function playRound(pick) {
+    player = playerChoice(pick).toLowerCase();
 
     computer = computerChoice().toLowerCase();
 if (player == 'rock' ) {
@@ -106,9 +106,30 @@ if (player == 'rock' ) {
 return console.log(`the score is ${playerScore} - ${computerScore}`)
 }
 
-function playGame(howManyGames) {
-howManyGames = +prompt('How many times do you want to play?(default is 5)', 5);
-for (let i = 0; i < howManyGames; i++) {
-playRound()
-}
-}
+
+
+const rockBut = document.querySelectorAll("button");
+
+rockBut.forEach(but => but.addEventListener("click",  (e) => {
+    console.log(e)
+    if (e.target.classList == "rockBut") {
+        playRound(1)
+    } else if (e.target.classList == "paperBut") {
+        playRound(2)
+    } else if (e.target.classList == "scissorsBut") {
+        playRound(3)
+    } else {
+        playRound(1)
+    }
+
+    
+}))
+
+
+
+// function playGame(howManyGames) {
+// howManyGames = +prompt('How many times do you want to play?(default is 5)', 5);
+// for (let i = 0; i < howManyGames; i++) {
+// playRound()
+// }
+// }

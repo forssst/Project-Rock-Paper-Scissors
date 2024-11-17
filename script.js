@@ -3,6 +3,7 @@ console.log('If you want to play a Rock Paper Scissors game type \'playGame()\''
 
 let playerScore = 0;
 let computerScore = 0;
+const scoreDiv = document.querySelector(".scoreDiv");
 
 // to ma zwracac string xdd
 
@@ -87,7 +88,7 @@ if (player == 'rock' ) {
             console.log('computer picked Scissors !')
             playerScore += 1
             computerScore += 1
-            console.log('it\'s a TIE!')
+            scoreDiv.textContent = 'it\'s a TIE!'
         } else if (computer === 'paper') {
             console.log('computer picked Paper !')
             playerScore += 1
@@ -103,27 +104,11 @@ if (player == 'rock' ) {
     console.log(`You can only pick 1-3 and you picked ${player} try again sucka`)
 }
 
-return console.log(`the score is ${playerScore} - ${computerScore}`)
+return scoreDiv.textContent = `the score is ${playerScore} - ${computerScore}`;
 }
 
+/// dokoczyc zeby kazdy komunikat sie pojawial w domie to kot wygyrqa i wgl punkt 2/3
 
-
-// const rockBut = document.querySelectorAll("button");
-
-// rockBut.forEach(but => but.addEventListener("click",  (e) => {
-//     console.log(e)
-//     if (e.target.classList == "rockBut") {
-//         playRound(1)
-//     } else if (e.target.classList == "paperBut") {
-//         playRound(2)
-//     } else if (e.target.classList == "scissorsBut") {
-//         playRound(3)
-//     } else {
-//         playRound(1)
-//     }
-
-    
-// }))
 
 
 const choiceButDiv = document.querySelector(".choiceButtons");
@@ -141,7 +126,14 @@ choiceButDiv.addEventListener("click", (e) => {
     } else if ( e.target.textContent === "Scissors"){
         playRound(3)
     } else {playRound(1)}
-})
+});
+
+
+
+checkScorePlayer =+ playerScore;
+console.log(checkScorePlayer)
+
+
 
 
 

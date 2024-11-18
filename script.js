@@ -103,6 +103,28 @@ if (player == 'rock' ) {
 }
 
 scoreDiv.textContent = `the score is ${playerScore} - ${computerScore}`;
+
+    if (playerScore === 5 && computerScore === 5) {
+        scoreDiv.textContent = `the score is ${playerScore} - ${computerScore}`;
+        whoWonDiv.textContent = "GAME OVER IT\'S A TIE"
+        compChoice.textContent = ""
+        playerScore = 0
+        computerScore = 0
+    } else if  (computerScore === 5) {
+        scoreDiv.textContent = `the score is ${playerScore} - ${computerScore}`;
+        whoWonDiv.textContent = "GAME OVER COMPUTER WINS"
+        compChoice.textContent = ""
+        playerScore = 0
+        computerScore = 0
+    } else if (playerScore === 5) {
+        scoreDiv.textContent = `the score is ${playerScore} - ${computerScore}`;
+        whoWonDiv.textContent = "GAME OVER PLAYER WINS"
+        compChoice.textContent = ""
+        playerScore = 0
+        computerScore = 0
+    }
+
+
 }
 
 /// dokoczyc zeby kazdy komunikat sie pojawial w domie to kot wygyrqa i wgl punkt 2/3

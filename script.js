@@ -4,6 +4,10 @@ console.log('If you want to play a Rock Paper Scissors game type \'playGame()\''
 let playerScore = 0;
 let computerScore = 0;
 const scoreDiv = document.querySelector(".scoreDiv");
+const compChoice = document.querySelector(".compChoice");
+const whoWonDiv = document.querySelector(`.whoWonDiv`);
+
+console.log(whoWonDiv)
 
 // to ma zwracac string xdd
 
@@ -36,10 +40,6 @@ function computerChoice () {
     return pickNum;
 }
 
-// 1 - rock 2 paper 3 scissror
-// 1 1 = 2 1 2 = 3 1 3 = 4
-// 2 1 2 2 2 3
-// 3 1 3 2 3 3
 
 
 function playRound(pick) {
@@ -49,62 +49,60 @@ function playRound(pick) {
 if (player == 'rock' ) {
     console.log('player picked Rock !')
     if (player  === computer) {
-        console.log('computer picked Rock !')
+        compChoice.textContent = ('computer picked Rock !')
         playerScore += 1
         computerScore += 1
-        console.log('it\'s a TIE!')
+        whoWonDiv.textContent = ('it\'s a TIE!')
     } else if ( computer === "paper") {
-        console.log('computer picked Paper !')
+        compChoice.textContent = ('computer picked Paper !')
         computerScore += 1
-        console.log('computer Wins !')
+        whoWonDiv.textContent =('computer Wins !')
     } else if (computer === 'scissors') {
-        console.log('computer picked Scissors !')
+        compChoice.textContent = ('computer picked Scissors !')
         playerScore += 1
-        console.log('Player wins!!')
+        whoWonDiv.textContent =('Player wins!!')
     } else {
-        console.log('Something went wrong sorry :(')
+        whoWonDiv.textContent =('Something went wrong sorry :(')
     }
 } else if (player == 'paper') {
         console.log('player picked Paper !')
         if (player === computer) {
-            console.log('computer picked Paper !')
+            compChoice.textContent = ('computer picked Paper !')
             playerScore += 1
             computerScore += 1
-            console.log('it\'s a TIE!')
+            whoWonDiv.textContent =('it\'s a TIE!')
         } else if (computer === 'rock') {
-            console.log('computer picked Rock !')
+            compChoice.textContent = ('computer picked Rock !')
             playerScore += 1
-            console.log('Player  Wins !')
+            whoWonDiv.textContent =('Player  Wins !')
         } else if (computer === 'scissors') {
-            console.log('computer picked Scissors !')
+            compChoice.textContent = ('computer picked Scissors !')
             computerScore += 1
-            console.log('Computer wins!!')
+            whoWonDiv.textContent =('Computer wins!!')
         } else {
-            console.log('Something went wrong sorry :(')
+            whoWonDiv.textContent =('Something went wrong sorry :(')
         }
 } else if (player == 'scissors') {
     console.log('player picked Scissors !')
         if (player === computer) {
-            console.log('computer picked Scissors !')
+            compChoice.textContent = ('computer picked Scissors !')
             playerScore += 1
             computerScore += 1
-            scoreDiv.textContent = 'it\'s a TIE!'
+            whoWonDiv.textContent = `it\'s a TIE!`
         } else if (computer === 'paper') {
-            console.log('computer picked Paper !')
+            compChoice.textContent = ('computer picked Paper !')
             playerScore += 1
-            console.log('Player  Wins !')
+            whoWonDiv.textContent =('Player  Wins !')
         } else if (computer === 'rock') {
-            console.log('computer picked Rock !')
+            compChoice.textContent = ('computer picked Rock !')
             computerScore += 1
-            console.log('Computer wins!!')
+            whoWonDiv.textContent =('Computer wins!!')
         } else {
-            console.log('Something went wrong sorry :(')
+            whoWonDiv.textContent =('Something went wrong sorry :(')
         }
-} else {
-    console.log(`You can only pick 1-3 and you picked ${player} try again sucka`)
 }
 
-return scoreDiv.textContent = `the score is ${playerScore} - ${computerScore}`;
+scoreDiv.textContent = `the score is ${playerScore} - ${computerScore}`;
 }
 
 /// dokoczyc zeby kazdy komunikat sie pojawial w domie to kot wygyrqa i wgl punkt 2/3
